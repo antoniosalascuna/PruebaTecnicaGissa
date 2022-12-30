@@ -26,8 +26,9 @@ namespace PruebaTecnicaGissa.Controllers
 
 		public IActionResult CerrarSesion()
 		{
-			
-			HttpContext.Session.SetString("usuario", "");
+			HttpContext.Session.GetString("usuario");
+
+            HttpContext.Session.SetString("usuario", "");
 
 			return RedirectToAction("Login", "Acceso");
 		}

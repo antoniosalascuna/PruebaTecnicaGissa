@@ -1,63 +1,75 @@
 ﻿@model PruebaTecnicaGissa.Models.TestUser
 
 @{
-    ViewData["Title"] = "Create";
+	ViewData["Title"] = "Formulario de registro";
 }
 
-<h1>Create</h1>
-
-<h4>TestUser</h4>
+<h1>Registrar nuevo Usuario</h1>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="UserLastName" class="control-label"></label>
-                <input asp-for="UserLastName" class="form-control" />
-                <span asp-validation-for="UserLastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UserNickName" class="control-label"></label>
-                <input asp-for="UserNickName" class="form-control" />
-                <span asp-validation-for="UserNickName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UserUserType" class="control-label"></label>
-                <input asp-for="UserUserType" class="form-control" />
-                <span asp-validation-for="UserUserType" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UserTypeCed" class="control-label"></label>
-                <input asp-for="UserTypeCed" class="form-control" />
-                <span asp-validation-for="UserTypeCed" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UserCed" class="control-label"></label>
-                <input asp-for="UserCed" class="form-control" />
-                <span asp-validation-for="UserCed" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UserPass" class="control-label"></label>
-                <input asp-for="UserPass" class="form-control" />
-                <span asp-validation-for="UserPass" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UserEmail" class="control-label"></label>
-                <input asp-for="UserEmail" class="form-control" />
-                <span asp-validation-for="UserEmail" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+<div class="container">
+	<div class="col-md-4">
+		<form asp-action="Create">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+			<div class="row">
+
+				<div class="col-md-6">
+					<div class="form-group">
+						<label asp-for="UserLastName" class="control-label">Nombre Completo</label>
+						<input asp-for="UserLastName" class="form-control" />
+						<span asp-validation-for="UserLastName" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="UserNickName" class="control-label">NickName</label>
+						<input asp-for="UserNickName" class="form-control" />
+						<span asp-validation-for="UserNickName" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="UserUserType" class="control-label">Tipo de Usuario</label>
+						<input asp-for="UserUserType" class="form-control" />
+						<span asp-validation-for="UserUserType" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="UserTypeCed" class="control-label">Tipo de Cedula</label>
+						<input asp-for="UserTypeCed" class="form-control" />
+						<span asp-validation-for="UserTypeCed" class="text-danger"></span>
+					</div>
+				</div>
+
+
+
+				<div class="col-md-6">
+					<div class="form-group">
+						<label asp-for="UserCed" class="control-label">Cedula</label>
+						<input asp-for="UserCed" class="form-control" />
+						<span asp-validation-for="UserCed" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="UserPass" class="control-label">Password</label>
+						<input asp-for="UserPass" class="form-control" />
+						<span asp-validation-for="UserPass" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="UserEmail" class="control-label">Correo</label>
+						<input asp-for="UserEmail" class="form-control" />
+						<span asp-validation-for="UserEmail" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<input type="submit" value="Create" class="btn btn-primary" />
+					</div>
+				</div>
+			</div>
+
+		</form>
+	</div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+	<a asp-action="Index">Volver a la lista</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
 }
