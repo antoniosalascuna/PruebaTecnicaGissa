@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PruebaTecnicaGissa.Models;
 using System.Diagnostics;
-
+using PruebaTecnicaGissa.Permisos;
 namespace PruebaTecnicaGissa.Controllers
 {
+	[ValidarSesion]
 	public class HomeController : Controller
 	{
 		private readonly ILogger<HomeController> _logger;
@@ -25,7 +26,8 @@ namespace PruebaTecnicaGissa.Controllers
 
 		public IActionResult CerrarSesion()
 		{
-			HttpContext.Session.SetString("usuario", null);
+			
+			HttpContext.Session.SetString("usuario", "");
 
 			return RedirectToAction("Login", "Acceso");
 		}

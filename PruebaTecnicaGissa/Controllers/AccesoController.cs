@@ -92,7 +92,8 @@ namespace PruebaTecnicaGissa.Controllers
 
             if (usuario.USER_UserType.Equals("A"))
             {
-                HttpContext.Session.SetString("usuario", usuario.ToString());
+                
+                HttpContext.Session.SetString("usuario", usuario.USER_UserType);
 				return RedirectToAction("Index", "Home");
 
 			}

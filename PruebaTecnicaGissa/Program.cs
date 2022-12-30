@@ -8,8 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 //Se agrega esta linea porque estoy cambiando el estilo de lectura del string de conexion al archivo appsetting.json
-//builder.Services.AddDbContext<TestDbContext>(options =>
-//	options.UseSqlServer(builder.Configuration.GetConnectionString("Conexion")));
+    builder.Services.AddDbContext<TestDbContext>(options =>
+	options.UseSqlServer(builder.Configuration.GetConnectionString("Conexion")));
 
 
 builder.Services.AddDistributedMemoryCache();
@@ -21,7 +21,11 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
+
+
 var app = builder.Build();
+
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
